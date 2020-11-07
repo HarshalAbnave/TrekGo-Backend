@@ -12,4 +12,5 @@ RUN \
 WORKDIR /TrekGo-Backend
 COPY . /TrekGo-Backend
 COPY package*.json ./
+RUN npm install
 
