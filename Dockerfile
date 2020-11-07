@@ -6,7 +6,7 @@ RUN \
 RUN \
     apt-get update && \
     apt-get install -yqq nodejs yarn && \
-    apt-get insall -yqq npm yarn && \
+    apt-get install -yqq npm yarn && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /TrekGo-Backend
