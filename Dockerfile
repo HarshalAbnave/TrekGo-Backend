@@ -12,4 +12,6 @@ RUN \
 WORKDIR /TrekGo-Backend
 COPY . /TrekGo-Backend
 COPY package*.json ./
-RUN npm -v
+RUN npm install
+EXPOSE 3000
+CMD ["node","server.js"]
