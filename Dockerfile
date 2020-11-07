@@ -1,16 +1,6 @@
-FROM ubuntu:20.04
-
-RUN \
-    apt-get update && \
-    apt-get install -yqq apt-transport-https
-RUN \
-    apt-get update && \
-    apt-get install -yqq nodejs yarn && \
-    apt-get install -yqq npm yarn && \
-    rm -rf /var/lib/apt/lists/*
-
-WORKDIR /TrekGo-Backend
-COPY . /TrekGo-Backend
+FROM node:10
+WORKDIR /App
+COPY . /App
 COPY package*.json ./
 RUN npm install
 EXPOSE 3000
