@@ -7,3 +7,11 @@ RUN \
     curl -sL https://deb.nodesource.com/setup_11.x | bash - && \
     apt-get update && \
     apt-get install -yqq nodejs yarn && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /TrekGo-Backend
+COPY . /TrekGo-Backend
+COPY package*.json ./
+RUN npm install
+EXPOSE 3000
+CMD [ "node", "server.js" ]
